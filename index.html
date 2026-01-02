@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stelios Maras | Data Analyst Portfolio</title>
+
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
@@ -20,7 +24,6 @@
             flex-direction: column;
             align-items: center;
             overflow-x: hidden;
-            /* Αποφυγή οριζόντιου scroll σε κινητά */
         }
 
         /* --- HEADER --- */
@@ -29,9 +32,7 @@
             padding: 60px 20px 30px 20px;
             max-width: 900px;
             width: 100%;
-            /* Εξασφαλίζει ότι δεν ξεπερνά το πλάτος */
             box-sizing: border-box;
-            /* Συμπεριλαμβάνει το padding στο πλάτος */
         }
 
         h1 {
@@ -39,7 +40,6 @@
             margin-bottom: 10px;
             letter-spacing: 2px;
             line-height: 1.2;
-            /* Καλύτερο διάστιχο για κινητά */
         }
 
         .highlight {
@@ -47,7 +47,6 @@
             /* Neon Cyan */
             text-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
             display: inline-block;
-            /* Βοηθάει να μην κόβεται το shadow */
         }
 
         p.subtitle {
@@ -65,7 +64,6 @@
             border: 1px solid #333;
             max-width: 800px;
             width: 90%;
-            /* Πιο ευέλικτο πλάτος */
             margin-top: 30px;
             margin-bottom: 30px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -91,7 +89,6 @@
             gap: 12px;
             margin-bottom: 50px;
             flex-wrap: wrap;
-            /* Αυτό επιτρέπει στα tags να πέφτουν σε επόμενη γραμμή στα κινητά */
             align-items: center;
             max-width: 900px;
             width: 95%;
@@ -139,17 +136,14 @@
         }
 
 
-        /* --- REPORT CONTAINER (RESPONSIVE IFRAME FIX) --- */
-        /* Αυτό είναι το κόλπο για να διατηρείται η αναλογία 16:9 σε όλες τις οθόνες */
+        /* --- REPORT CONTAINER (RESPONSIVE) --- */
         .report-container {
             width: 95%;
-            /* Πιο φαρδύ στα κινητά */
             max-width: 1240px;
             position: relative;
-            /* Αφαιρούμε το σταθερό height: 85vh; */
             height: 0;
-            /* Το padding-bottom ορίζει το aspect ratio (9 / 16 = 56.25%) */
             padding-bottom: 56.25%;
+            /* 16:9 Aspect Ratio */
             border: 1px solid #333;
             border-radius: 12px;
             overflow: hidden;
@@ -187,7 +181,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Κεντράρισμα κειμένου */
             gap: 10px;
             font-size: 1rem;
         }
@@ -234,26 +227,21 @@
         }
 
         /* =========================================
-           MEDIA QUERIES - ΟΙ ΚΑΝΟΝΕΣ ΓΙΑ ΚΙΝΗΤΑ
+           MEDIA QUERIES - ΓΙΑ ΚΙΝΗΤΑ
         ========================================= */
-
-        /* Για Tablets και μικρά laptops (κάτω από 992px) */
         @media (max-width: 992px) {
             h1 {
                 font-size: 2.5rem;
             }
         }
 
-        /* Για Κινητά (κάτω από 768px) */
         @media (max-width: 768px) {
             header {
                 padding: 40px 15px 20px 15px;
-                /* Λιγότερο padding */
             }
 
             h1 {
                 font-size: 2rem;
-                /* Μικρότερος τίτλος */
             }
 
             p.subtitle {
@@ -262,7 +250,6 @@
 
             .bio-container {
                 width: 92%;
-                /* Πιο πλατύ container */
                 padding: 20px;
             }
 
@@ -272,10 +259,8 @@
 
             .cert-tag {
                 font-size: 0.9rem;
-                /* Λίγο μικρότερη γραμματοσειρά στο badge */
                 padding: 8px 12px;
                 white-space: normal;
-                /* Επιτρέπει στο μεγάλο τίτλο να σπάσει σε 2 γραμμές αν χρειαστεί */
                 text-align: center;
             }
 
@@ -284,22 +269,18 @@
             }
         }
 
-        /* Για πολύ μικρά κινητά (κάτω από 480px) */
         @media (max-width: 480px) {
             h1 {
                 font-size: 1.8rem;
             }
 
-            /* Τα κουμπιά social γίνονται full width και μπαίνουν το ένα κάτω από το άλλο */
             .social-buttons {
-                flex-direction: column;
+                flexDirection: column;
                 gap: 15px;
             }
 
             .btn {
                 width: 100%;
-                /* Πλήρες πλάτος */
-                box-sizing: border-box;
             }
         }
     </style>
