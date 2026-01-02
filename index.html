@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="el">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stelios Maras | Data Analyst Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- ΒΑΣΙΚΟ ΣΤΥΛ (DARK MODE) --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #01090B;
+            /* Το φόντο μας */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- HEADER --- */
+        header {
+            text-align: center;
+            padding: 60px 20px 30px 20px;
+            max-width: 900px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .highlight {
+            color: #00E0FF;
+            /* Neon Cyan */
+            text-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+        }
+
+        p.subtitle {
+            color: #A0AEC0;
+            font-size: 1.3rem;
+            margin-top: 0;
+            font-weight: 300;
+        }
+
+        /* --- BIO / INTRO FROM LINKEDIN --- */
+        .bio-container {
+            background-color: #0d1117;
+            padding: 25px 35px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            max-width: 800px;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        p.bio {
+            color: #ccc;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            margin-top: 0;
+            text-align: left;
+            /* Πιο επαγγελματικό για μεγάλο κείμενο */
+        }
+
+        p.bio strong {
+            color: #ffffff;
+        }
+
+        /* --- SKILLS SECTION (Tech Stack) --- */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+            align-items: center;
+            max-width: 900px;
+            /* Περιορίζουμε το πλάτος για να μην απλώνουν πολύ */
+        }
+
+        .skill-tag {
+            background-color: #0d1117;
+            border: 1px solid #00E0FF;
+            color: #00E0FF;
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 0 5px rgba(0, 224, 255, 0.1);
+            white-space: nowrap;
+            /* Αυτό αποτρέπει το wrap μέσα στο ίδιο tag */
+        }
+
+        /* Ειδικό Στυλ για το PL-300 (Gold) */
+        .cert-tag {
+            background-color: rgba(255, 215, 0, 0.1);
+            /* Ελαφρύ χρυσό φόντο */
+            border: 1px solid #FFD700;
+            /* Χρυσό περίγραμμα */
+            color: #FFD700;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            font-weight: 700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            white-space: nowrap;
+            /* Αποτρέπει το wrap */
+        }
+
+        /* --- PROJECT TITLE --- */
+        h2.project-title {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        h2.project-title strong {
+            color: #00E0FF;
+        }
+
+
+        /* --- REPORT CONTAINER --- */
+        .report-container {
+            width: 90%;
+            max-width: 1240px;
+            height: 85vh;
+            /* Πιάνει το 85% του ύψους της οθόνης */
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(0, 224, 255, 0.05);
+            /* Glow */
+            margin-bottom: 40px;
+            background-color: #0d1117;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- CONTACT BUTTONS --- */
+        .social-buttons {
+            margin-bottom: 50px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1rem;
+        }
+
+        /* LinkedIn Style */
+        .btn-linkedin {
+            background-color: #0077b5;
+            color: white;
+            border: 1px solid #0077b5;
+        }
+
+        .btn-linkedin:hover {
+            background-color: #005e93;
+            box-shadow: 0 0 15px rgba(0, 119, 181, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Email Style */
+        .btn-email {
+            background-color: transparent;
+            border: 1px solid #00E0FF;
+            color: #00E0FF;
+        }
+
+        .btn-email:hover {
+            background-color: #00E0FF;
+            color: #01090B;
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            margin-bottom: 30px;
+            color: #555;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #00E0FF;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Hi, I'm <span class="highlight">Stelios Maras</span></h1>
+        <p class="subtitle">Data Analyst & Business Intelligence Developer</p>
+    </header>
+
+    <div class="bio-container">
+        <p class="bio">
+            I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
+            passion for transforming raw data into actionable business insights. <br><br>
+            My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation
+            (Python/Pandas) to building robust data models and interactive dashboards in <strong>Microsoft Power
+                BI</strong>.
+            <br><br>
+            I specialize in creating intuitive, high-performance reports that help stakeholders make data-driven
+            decisions confidently. My goal is to bridge the gap between technical data and business strategy.
+        </p>
+    </div>
+
+    <div class="skills-container">
+        <span class="cert-tag">
+            <i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst Associate
+        </span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Python (Pandas)</span>
+        <span class="skill-tag">DAX</span>
+        <span class="skill-tag">Data Modeling</span>
+        <span class="skill-tag">ETL Process</span>
+    </div>
+
+    <h2 class="project-title">Featured Project: <strong>AeroDrive Dashboard</strong></h2>
+
+    <div class="report-container">
+        <iframe title="AeroDrive"
+            src="https://app.powerbi.com/view?r=eyJrIjoiYjgxODU2MTItN2QyYS00MDZhLTg3MjAtNTk1OTVmMDVkMmQyIiwidCI6IjUxZjljNDU2LTdhOGUtNGJkNy04MzkyLWI5MjU3YWZmYzBkMSIsImMiOjl9"
+            frameborder="0" allowFullScreen="true">
+        </iframe>
+    </div>
+
+    <div class="social-buttons">
+        <a href="https://www.linkedin.com/in/stylianos-maras" target="_blank" class="btn btn-linkedin">
+            <i class="fab fa-linkedin"></i> Connect on LinkedIn
+        </a>
+
+        <a href="mailto:maras.stylianos@gmail.com" class="btn btn-email">
+            <i class="fas fa-envelope"></i> Contact Me
+        </a>
+    </div>
+
+    <footer>
+        Designed by Stelios | Powered by <a href="#">Power BI</a>
+    </footer>
+
+</body>
+
+</html>
