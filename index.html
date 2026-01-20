@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <style>
-        /* --- Basic Style (DARK MODE) --- */
+        /* --- ΒΑΣΙΚΟ ΣΤΥΛ --- */
         body {
             margin: 0;
             padding: 0;
@@ -54,7 +54,7 @@
             font-weight: 300;
         }
 
-        /* --- BIO / INTRO --- */
+        /* --- BIO --- */
         .bio-container {
             background-color: #0d1117;
             padding: 25px 35px;
@@ -80,7 +80,7 @@
             color: #ffffff;
         }
 
-        /* --- SKILLS SECTION --- */
+        /* --- SKILLS --- */
         .skills-container {
             display: flex;
             justify-content: center;
@@ -120,34 +120,38 @@
             text-align: center;
         }
 
-        /* --- PROJECT TITLE --- */
-        h2.project-title {
+        /* --- SECTIONS TITLES --- */
+        h2.section-title {
             color: #ffffff;
-            margin-bottom: 20px;
-            font-weight: 400;
+            margin-top: 40px;
+            margin-bottom: 30px;
+            font-weight: 300;
             text-align: center;
-            padding: 0 10px;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            width: 90%;
+            max-width: 800px;
         }
 
-        h2.project-title strong {
+        h2.section-title strong {
             color: #00E0FF;
+            font-weight: 600;
         }
 
-
-        /* --- REPORT CONTAINER (RESPONSIVE) --- */
+        /* --- REPORT CONTAINER --- */
         .report-container {
             width: 95%;
             max-width: 1240px;
             position: relative;
             height: 0;
             padding-bottom: 56.25%;
-            /* 16:9 Aspect Ratio */
             border: 1px solid #333;
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 0 40px rgba(0, 224, 255, 0.05);
-            /* Glow */
-            margin-bottom: 40px;
+            margin-bottom: 20px;
             background-color: #0d1117;
         }
 
@@ -158,6 +162,97 @@
             width: 100%;
             height: 100%;
             border: none;
+        }
+
+        /* --- TECHNICAL BREAKDOWN --- */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1100px;
+            margin-bottom: 50px;
+        }
+
+        .tech-card {
+            background-color: #0d1117;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            border-color: #00E0FF;
+        }
+
+        .tech-card i {
+            font-size: 2rem;
+            color: #00E0FF;
+            margin-bottom: 15px;
+        }
+
+        .tech-card h3 {
+            margin: 0 0 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .tech-card p {
+            color: #A0AEC0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* --- LOGO GRID (TRUST BAR) --- */
+        .clients-container {
+            width: 90%;
+            max-width: 1000px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .client-logo-box {
+            /* ΛΕΥΚΟ ΚΟΥΤΙ ΓΙΑ ΝΑ ΦΑΙΝΟΝΤΑΙ ΤΑ LOGOS */
+            background-color: #ffffff;
+            width: 160px;
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            /* Στρογγυλεμένες γωνίες */
+            padding: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .client-logo-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            /* Για να μην παραμορφώνονται */
+            filter: grayscale(100%);
+            /* Ασπρόμαυρο αρχικά */
+            transition: all 0.4s ease;
+            opacity: 0.8;
+        }
+
+        /* Hover Effect: Έγχρωμο και Glow */
+        .client-logo-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
+            /* Cyan Glow στο κουτί */
+        }
+
+        .client-logo-box:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
         }
 
         /* --- CONTACT BUTTONS --- */
@@ -183,7 +278,6 @@
             font-size: 1rem;
         }
 
-        /* LinkedIn Style */
         .btn-linkedin {
             background-color: #0077b5;
             color: white;
@@ -192,11 +286,9 @@
 
         .btn-linkedin:hover {
             background-color: #005e93;
-            box-shadow: 0 0 15px rgba(0, 119, 181, 0.4);
             transform: translateY(-2px);
         }
 
-        /* Email Style */
         .btn-email {
             background-color: transparent;
             border: 1px solid #00E0FF;
@@ -206,7 +298,6 @@
         .btn-email:hover {
             background-color: #00E0FF;
             color: #01090B;
-            box-shadow: 0 0 15px rgba(0, 224, 255, 0.4);
             transform: translateY(-2px);
         }
 
@@ -216,7 +307,6 @@
             color: #555;
             font-size: 0.9rem;
             text-align: center;
-            padding: 0 20px;
         }
 
         footer a {
@@ -224,62 +314,30 @@
             text-decoration: none;
         }
 
-        /* ============================
-           MEDIA QUERIES - FOR MOBILES
-        ============================ */
-        @media (max-width: 992px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-        }
-
+        /* MEDIA QUERIES */
         @media (max-width: 768px) {
-            header {
-                padding: 40px 15px 20px 15px;
-            }
-
             h1 {
                 font-size: 2rem;
             }
 
-            p.subtitle {
-                font-size: 1.1rem;
+            .tech-grid {
+                grid-template-columns: 1fr;
             }
 
-            .bio-container {
-                width: 92%;
-                padding: 20px;
+            h2.section-title {
+                font-size: 1.5rem;
             }
 
-            p.bio {
-                font-size: 1rem;
-            }
-
-            .cert-tag {
-                font-size: 0.9rem;
-                padding: 8px 12px;
-                white-space: normal;
-                text-align: center;
-            }
-
-            h2.project-title {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .social-buttons {
-                flexDirection: column;
+            .clients-container {
                 gap: 15px;
             }
 
-            .btn {
-                width: 100%;
+            .client-logo-box {
+                width: 130px;
+                height: 70px;
             }
+
+            /* Πιο μικρά σε κινητά */
         }
     </style>
 </head>
@@ -296,7 +354,7 @@
             I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
             passion for transforming raw data into actionable business insights. <br><br>
             My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation
-            (Python) to building robust data models and interactive dashboards in <strong>Microsoft Power
+            (Python/Pandas) to building robust data models and interactive dashboards in <strong>Microsoft Power
                 BI</strong>. <br><br>
             I specialize in creating intuitive, high-performance reports that help stakeholders make data-driven
             decisions confidently. My goal is to bridge the gap between technical data and business strategy.
@@ -304,17 +362,16 @@
     </div>
 
     <div class="skills-container">
-        <span class="cert-tag">
-            <i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst Associate
-        </span>
+        <span class="cert-tag"><i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst
+            Associate</span>
         <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Python (Pandas)</span>
         <span class="skill-tag">DAX</span>
         <span class="skill-tag">Data Modeling</span>
         <span class="skill-tag">ETL Process</span>
     </div>
 
-    <h2 class="project-title">Featured Project: <strong>AeroDrive Dashboard</strong></h2>
+    <h2 class="section-title">Featured Project: <strong>AeroDrive</strong></h2>
 
     <div class="report-container">
         <iframe title="AeroDrive"
@@ -323,19 +380,65 @@
         </iframe>
     </div>
 
+    <div class="tech-grid">
+        <div class="tech-card">
+            <i class="fab fa-python"></i>
+            <h3>Data Generation & ETL</h3>
+            <p>
+                Used <strong>Python (Pandas, Faker)</strong> to generate a robust mock dataset of 50,000+ sales records,
+                simulating real-world inconsistencies and cleaning raw data before ingestion.
+            </p>
+        </div>
+        <div class="tech-card">
+            <i class="fas fa-database"></i>
+            <h3>Data Modeling</h3>
+            <p>
+                Designed a <strong>Star Schema</strong> data model optimized for performance. Established relationships
+                between Fact tables (Sales) and Dimension tables (Dates, Locations, Products).
+            </p>
+        </div>
+        <div class="tech-card">
+            <i class="fas fa-chart-bar"></i>
+            <h3>Advanced Analytics</h3>
+            <p>
+                Implemented complex <strong>DAX measures</strong> (Time Intelligence, YoY Growth) and interactive UI
+                elements like Page Navigation, Drill-throughs, and Dynamic Tooltips.
+            </p>
+        </div>
+    </div>
+
+    <h2 class="section-title">Professional <strong>Collaborations</strong></h2>
+
+    <div class="clients-container">
+
+        <a href="https://enomix.gr/" target="_blank" class="client-logo-box">
+            <img src="enomix.png" alt="Enomix">
+        </a>
+
+        <a href="https://elanet.gr/" target="_blank" class="client-logo-box">
+            <img src="elanet.png" alt="ELANET">
+        </a>
+
+        <a href="https://minfin.gov.gr/" target="_blank" class="client-logo-box">
+            <img src="minfin.png" alt="Ministry of Finance">
+        </a>
+
+        <a href="http://espa.gr/el/pages/default.aspx" target="_blank" class="client-logo-box">
+            <img src="espa.png" alt="espa">
+        </a>
+
+    </div>
+
     <div class="social-buttons">
         <a href="https://www.linkedin.com/in/stylianos-maras" target="_blank" class="btn btn-linkedin">
             <i class="fab fa-linkedin"></i> Connect on LinkedIn
         </a>
-
         <a href="mailto:maras.stylianos@gmail.com" class="btn btn-email">
             <i class="fas fa-envelope"></i> Contact Me
         </a>
     </div>
 
-    <footer>
-        Designed by Stelios | Powered by <a href="#">Power BI</a>
-    </footer>
+    <footer>Designed by Stelios | Powered by <a href="#">Power BI</a></footer>
 
 </body>
 
