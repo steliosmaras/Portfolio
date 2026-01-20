@@ -32,6 +32,10 @@
             max-width: 900px;
             width: 100%;
             box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* Κεντράρισμα όλων των στοιχείων */
         }
 
         h1 {
@@ -51,7 +55,33 @@
             color: #A0AEC0;
             font-size: 1.3rem;
             margin-top: 0;
+            margin-bottom: 20px;
+            /* Λίγο χώρος για το badge */
             font-weight: 300;
+        }
+
+        /* --- HEADER CERT BADGE (NEW LOCATION) --- */
+        .header-cert-badge {
+            background-color: rgba(255, 215, 0, 0.08);
+            /* Πολύ απαλό χρυσό φόντο */
+            border: 1px solid #FFD700;
+            color: #FFD700;
+            padding: 8px 20px;
+            border-radius: 30px;
+            /* Πιο στρογγυλό (pill shape) */
+            font-weight: 600;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
+            /* Χρυσό Glow */
+            transition: transform 0.3s ease;
+        }
+
+        .header-cert-badge:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 215, 0, 0.15);
         }
 
         /* --- BIO --- */
@@ -63,7 +93,7 @@
             max-width: 800px;
             width: 90%;
             margin-top: 30px;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             box-sizing: border-box;
         }
@@ -80,44 +110,63 @@
             color: #ffffff;
         }
 
-        /* --- SKILLS --- */
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 50px;
-            flex-wrap: wrap;
-            align-items: center;
+        /* --- STRUCTURED SKILLS SECTION --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            /* Λίγο πιο φαρδιά κουτιά τώρα */
+            gap: 20px;
+            width: 90%;
             max-width: 900px;
-            width: 95%;
-            padding: 0 10px;
+            /* Περιορίζουμε λίγο το πλάτος για να μην απλώσουν πολύ */
+            margin-bottom: 50px;
         }
 
-        .skill-tag {
+        .skill-box {
             background-color: #0d1117;
+            border: 1px solid #333;
+            border-radius: 10px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-box:hover {
+            border-color: #00E0FF;
+            transform: translateY(-3px);
+        }
+
+        .box-title {
+            font-size: 1.1rem;
+            color: #fff;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .box-title i {
+            color: #00E0FF;
+        }
+
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        /* Tags Style */
+        .skill-tag {
+            background-color: rgba(0, 224, 255, 0.05);
             border: 1px solid #00E0FF;
             color: #00E0FF;
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            box-shadow: 0 0 5px rgba(0, 224, 255, 0.1);
-            white-space: nowrap;
-        }
-
-        .cert-tag {
-            background-color: rgba(255, 215, 0, 0.1);
-            border: 1px solid #FFD700;
-            color: #FFD700;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 1rem;
-            font-weight: 700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.25);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-align: center;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
         }
 
         /* --- SECTIONS TITLES --- */
@@ -205,7 +254,7 @@
             margin: 0;
         }
 
-        /* --- LOGO GRID (TRUST BAR) --- */
+        /* --- LOGO GRID --- */
         .clients-container {
             width: 90%;
             max-width: 1000px;
@@ -218,7 +267,6 @@
         }
 
         .client-logo-box {
-            /* ΛΕΥΚΟ ΚΟΥΤΙ ΓΙΑ ΝΑ ΦΑΙΝΟΝΤΑΙ ΤΑ LOGOS */
             background-color: #ffffff;
             width: 160px;
             height: 90px;
@@ -226,7 +274,6 @@
             align-items: center;
             justify-content: center;
             border-radius: 8px;
-            /* Στρογγυλεμένες γωνίες */
             padding: 10px;
             transition: all 0.3s ease;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
@@ -236,18 +283,14 @@
             max-width: 100%;
             max-height: 100%;
             object-fit: contain;
-            /* Για να μην παραμορφώνονται */
             filter: grayscale(100%);
-            /* Ασπρόμαυρο αρχικά */
             transition: all 0.4s ease;
             opacity: 0.8;
         }
 
-        /* Hover Effect: Έγχρωμο και Glow */
         .client-logo-box:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 15px rgba(0, 224, 255, 0.6);
-            /* Cyan Glow στο κουτί */
         }
 
         .client-logo-box:hover img {
@@ -320,7 +363,8 @@
                 font-size: 2rem;
             }
 
-            .tech-grid {
+            .tech-grid,
+            .skills-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -337,7 +381,10 @@
                 height: 70px;
             }
 
-            /* Πιο μικρά σε κινητά */
+            /* Σε μικρά κινητά, το badge μπορεί να σπάσει σε 2 γραμμές */
+            .header-cert-badge {
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -347,6 +394,10 @@
     <header>
         <h1>Hi, I'm <span class="highlight">Stelios Maras</span></h1>
         <p class="subtitle">Data Analyst & Business Intelligence Developer</p>
+
+        <div class="header-cert-badge">
+            <i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst Associate
+        </div>
     </header>
 
     <div class="bio-container">
@@ -361,14 +412,30 @@
         </p>
     </div>
 
-    <div class="skills-container">
-        <span class="cert-tag"><i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst
-            Associate</span>
-        <span class="skill-tag">SQL</span>
-        <span class="skill-tag">Python (Pandas)</span>
-        <span class="skill-tag">DAX</span>
-        <span class="skill-tag">Data Modeling</span>
-        <span class="skill-tag">ETL Process</span>
+    <div class="skills-grid">
+
+        <div class="skill-box">
+            <div class="box-title">
+                <i class="fas fa-code"></i> Languages & Tools
+            </div>
+            <div class="tags-wrapper">
+                <span class="skill-tag">Python (Pandas)</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Microsoft Power BI</span>
+            </div>
+        </div>
+
+        <div class="skill-box">
+            <div class="box-title">
+                <i class="fas fa-layer-group"></i> Analytics & Modeling
+            </div>
+            <div class="tags-wrapper">
+                <span class="skill-tag">DAX Measures</span>
+                <span class="skill-tag">Data Modeling</span>
+                <span class="skill-tag">ETL Process</span>
+            </div>
+        </div>
+
     </div>
 
     <h2 class="section-title">Featured Project: <strong>AeroDrive</strong></h2>
@@ -411,10 +478,6 @@
 
     <div class="clients-container">
 
-        <a href="https://enomix.gr/" target="_blank" class="client-logo-box">
-            <img src="enomix.png" alt="Enomix">
-        </a>
-
         <a href="https://elanet.gr/" target="_blank" class="client-logo-box">
             <img src="elanet.png" alt="ELANET">
         </a>
@@ -425,6 +488,14 @@
 
         <a href="http://espa.gr/el/pages/default.aspx" target="_blank" class="client-logo-box">
             <img src="espa.png" alt="espa">
+        </a>
+
+        <a href="https://enomix.gr/" target="_blank" class="client-logo-box">
+            <img src="enomix.png" alt="Enomix">
+        </a>
+
+        <a href="https://www.eval.gr/?lang=en-US" target="_blank" class="client-logo-box">
+            <img src="eval.png" alt="Eval">
         </a>
 
     </div>
@@ -441,5 +512,3 @@
     <footer>Designed by Stelios | Powered by <a href="#">Power BI</a></footer>
 
 </body>
-
-</html>
