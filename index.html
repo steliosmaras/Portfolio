@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stelios Maras | Data Analyst Portfolio</title>
 
+    <meta property="og:title" content="Stelios Maras | Data Analyst Portfolio">
+    <meta property="og:description"
+        content="Explore my Data Analysis & Business Intelligence portfolio. Featured Project: AeroDrive (Power BI, SQL, Python).">
+    <meta property="og:url" content="https://marasstylianos.github.io/Portfolio/">
+    <meta property="og:type" content="website">
+
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📈</text></svg>">
 
@@ -35,7 +41,6 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            /* Κεντράρισμα όλων των στοιχείων */
         }
 
         h1 {
@@ -56,26 +61,22 @@
             font-size: 1.3rem;
             margin-top: 0;
             margin-bottom: 20px;
-            /* Λίγο χώρος για το badge */
             font-weight: 300;
         }
 
-        /* --- HEADER CERT BADGE (NEW LOCATION) --- */
+        /* --- HEADER CERT BADGE --- */
         .header-cert-badge {
             background-color: rgba(255, 215, 0, 0.08);
-            /* Πολύ απαλό χρυσό φόντο */
             border: 1px solid #FFD700;
             color: #FFD700;
             padding: 8px 20px;
             border-radius: 30px;
-            /* Πιο στρογγυλό (pill shape) */
             font-weight: 600;
             font-size: 1rem;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             box-shadow: 0 0 15px rgba(255, 215, 0, 0.15);
-            /* Χρυσό Glow */
             transition: transform 0.3s ease;
         }
 
@@ -114,11 +115,9 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            /* Λίγο πιο φαρδιά κουτιά τώρα */
             gap: 20px;
             width: 90%;
             max-width: 900px;
-            /* Περιορίζουμε λίγο το πλάτος για να μην απλώσουν πολύ */
             margin-bottom: 50px;
         }
 
@@ -158,7 +157,6 @@
             gap: 10px;
         }
 
-        /* Tags Style */
         .skill-tag {
             background-color: rgba(0, 224, 255, 0.05);
             border: 1px solid #00E0FF;
@@ -381,7 +379,6 @@
                 height: 70px;
             }
 
-            /* Σε μικρά κινητά, το badge μπορεί να σπάσει σε 2 γραμμές */
             .header-cert-badge {
                 text-align: center;
             }
