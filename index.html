@@ -88,6 +88,51 @@
             transform: scale(1.05);
         }
 
+        /* --- TOOLTIP STYLE --- */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 220px;
+            background-color: #0d1117;
+            color: #fff;
+            text-align: center;
+            border-radius: 8px;
+            padding: 10px;
+            position: absolute;
+            z-index: 10;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -110px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border: 1px solid #00E0FF;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            font-weight: 300;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .info-icon {
+            color: #A0AEC0;
+            font-size: 0.9rem;
+            margin-left: 8px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .info-icon:hover {
+            color: #00E0FF;
+        }
+
         /* --- ALIGNMENT WRAPPER --- */
         .wrapper {
             max-width: 1100px;
@@ -257,7 +302,6 @@
             margin-bottom: 5px;
         }
 
-        /* --- LOGO WRAPPER (Updated to be Link) --- */
         .company-logo-wrapper {
             background-color: #fff;
             padding: 5px 15px;
@@ -265,7 +309,6 @@
             display: inline-block;
             transition: all 0.4s ease;
             text-decoration: none;
-            /* Αφαίρεση υπογράμμισης */
             cursor: pointer;
         }
 
@@ -277,7 +320,6 @@
             transition: all 0.4s ease;
         }
 
-        /* Hover Effects */
         .project-card:hover .company-logo-wrapper img {
             filter: grayscale(0%) opacity(1);
         }
@@ -286,7 +328,6 @@
             transform: scale(1.05);
         }
 
-        /* --- REAL ICONS --- */
         .tech-icons {
             display: flex;
             gap: 10px;
@@ -305,7 +346,6 @@
             transform: scale(1.1);
         }
 
-        /* --- DETAILS & METRICS --- */
         .project-details ul {
             padding-left: 20px;
             color: #ccc;
@@ -418,8 +458,11 @@
             <p class="bio">
                 I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
                 passion for transforming raw data into actionable business insights. <br><br>
-                My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation (Python)
-                to building robust data models and interactive dashboards in <strong>Microsoft Power BI</strong>.
+                My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation
+                (Python) to building robust data models and interactive dashboards in <strong>Microsoft Power
+                    BI</strong>. <br><br>
+                I specialize in creating intuitive, high-performance reports that help stakeholders make data-driven
+                decisions confidently. My goal is to bridge the gap between technical data and business strategy.
             </p>
         </div>
 
@@ -439,8 +482,14 @@
         </div>
 
         <div>
-            <h2 style="text-align: center; font-weight: 300; margin-bottom: 30px;">Featured Demo: <strong
-                    style="color: #00E0FF;">AeroDrive Dashboard</strong></h2>
+            <h2 style="text-align: center; font-weight: 300; margin-bottom: 30px;">
+                Featured Demo: <strong style="color: #00E0FF;">AeroDrive Dashboard</strong>
+                <span class="tooltip">
+                    <i class="fas fa-info-circle info-icon"></i>
+                    <span class="tooltiptext">Note: All data in this report is mock data and was created for
+                        demonstration purposes only.</span>
+                </span>
+            </h2>
             <div class="report-container">
                 <iframe title="AeroDrive"
                     src="https://app.powerbi.com/view?r=eyJrIjoiYjgxODU2MTItN2QyYS00MDZhLTg3MjAtNTk1OTVmMDVkMmQyIiwidCI6IjUxZjljNDU2LTdhOGUtNGJkNy04MzkyLWI5MjU3YWZmYzBkMSIsImMiOjl9"
@@ -553,8 +602,8 @@
                                 <a href="https://minfin.gov.gr/en/" target="_blank" class="company-logo-wrapper">
                                     <img src="minfin.png" alt="MinFin">
                                 </a>
-                                <a href="https://21-27.antagonistikotita.gr/en/programme-competitiveness/"
-                                    target="_blank" class="company-logo-wrapper">
+                                <a href="https://www.espa.gr/en/Pages/static_espa.aspx" target="_blank"
+                                    class="company-logo-wrapper">
                                     <img src="espa.png" alt="ESPA">
                                 </a>
                             </div>
@@ -631,7 +680,7 @@
         <a href="mailto:maras.stylianos@gmail.com" class="btn"><i class="fas fa-envelope"></i> Email Me</a>
     </div>
 
-    <footer>Designed by Stelios | Data Analysis & BI Solutions</footer>
+    <footer>&copy; 2026 Stelios Maras. All rights reserved.</footer>
 
 </body>
 
