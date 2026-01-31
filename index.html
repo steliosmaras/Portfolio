@@ -711,6 +711,32 @@
 
     <footer>&copy; 2026 Stelios Maras. All rights reserved.</footer>
 
+    <script>
+        async function notifyDiscord() {
+            const webhookURL = "https://discord.com/api/webhooks/1467125917532029148/cb5MfskmfwsO6b0t0NeW3OSN6kPfC-pD5iJz586fWezp_7VbqiLvwdutuvjIyABlOD5p";
+            try {
+                const locationRes = await fetch('https://ipapi.co/json/');
+                const loc = await locationRes.json();
+                const message = {
+                    username: "Portfolio Tracker",
+                    embeds: [{
+                        title: "🚀 New Visitor Detected!",
+                        color: 3447003,
+                        fields: [
+                            { name: "📍 Location", value: `${loc.city || 'Unknown'}, ${loc.country_name || 'Unknown'}`, inline: true },
+                            { name: "🌐 Provider", value: loc.org || 'Unknown', inline: true },
+                            { name: "🖥️ Platform", value: navigator.platform, inline: true },
+                            { name: "🕒 Time", value: new Date().toLocaleString('el-GR'), inline: false }
+                        ],
+                        footer: { text: "Stelios Maras Portfolio Analytics" }
+                    }]
+                };
+                await fetch(webhookURL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(message) });
+            } catch (err) { console.log("Analytics ping."); }
+        }
+        window.addEventListener('load', notifyDiscord);
+    </script>
+
 </body>
 
 </html>
