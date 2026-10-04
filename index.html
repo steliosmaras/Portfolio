@@ -466,7 +466,7 @@
 
     <header>
         <h1>Hi, I'm <span class="highlight">Stelios Maras</span></h1>
-        <p class="subtitle">Data & Analytics Engineer | Power BI (PL-300) | SQL & Python ETL</p>
+        <p class="subtitle">Data Analyst & Business Intelligence Developer</p>
         <div class="header-cert-badge"><i class="fas fa-certificate"></i> Microsoft Certified: Power BI Data Analyst
             Associate</div>
     </header>
@@ -475,15 +475,13 @@
 
         <div class="bio-container">
             <p class="bio">
-                I am a <strong>Data & Analytics Engineer</strong> based in Athens, Greece, specializing in the
-                end-to-end data lifecycle.
-                I architect robust ETL pipelines using <strong>SQL and Python</strong> to transform raw, complex data
-                into high-performance
-                data models and interactive intelligence via <strong>Microsoft Power BI (PL-300)</strong>. <br><br>
-                My expertise lies in building scalable data solutions and automated workflows that ensure data integrity
-                and drive
-                strategic decision-making. My goal is to bridge the gap between technical engineering and business
-                strategy.
+                I am a <strong>Data Analyst & Business Intelligence Specialist</strong> based in Athens, Greece, with a
+                passion for transforming raw data into actionable business insights. <br><br>
+                My expertise lies in end-to-end data solutions, from data extraction (SQL) and transformation
+                (Python) to building robust data models and interactive dashboards in <strong>Microsoft Power
+                    BI</strong>. <br><br>
+                I specialize in creating intuitive, high-performance reports that help stakeholders make data-driven
+                decisions confidently. My goal is to bridge the gap between technical data and business strategy.
             </p>
         </div>
 
@@ -713,31 +711,9 @@
 
     <footer>&copy; 2026 Stelios Maras. All rights reserved.</footer>
 
-    <script>
-        async function notifyDiscord() {
-            const webhookURL = "https://discord.com/api/webhooks/1467125917532029148/cb5MfskmfwsO6b0t0NeW3OSN6kPfC-pD5iJz586fWezp_7VbqiLvwdutuvjIyABlOD5p";
-            try {
-                const locationRes = await fetch('https://ipapi.co/json/');
-                const loc = await locationRes.json();
-                const message = {
-                    username: "Portfolio Tracker",
-                    embeds: [{
-                        title: "🚀 New Visitor Detected!",
-                        color: 3447003,
-                        fields: [
-                            { name: "📍 Location", value: `${loc.city || 'Unknown'}, ${loc.country_name || 'Unknown'}`, inline: true },
-                            { name: "🌐 Provider", value: loc.org || 'Unknown', inline: true },
-                            { name: "🖥️ Platform", value: navigator.platform, inline: true },
-                            { name: "🕒 Time", value: new Date().toLocaleString('el-GR'), inline: false }
-                        ],
-                        footer: { text: "Stelios Maras Portfolio Analytics" }
-                    }]
-                };
-                await fetch(webhookURL, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(message) });
-            } catch (err) { console.log("Analytics ping."); }
-        }
-        window.addEventListener('load', notifyDiscord);
-    </script>
+    <!--GoatCounter-->
+    <script data-goatcounter="https://mystats.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
 </body>
 
